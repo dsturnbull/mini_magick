@@ -141,7 +141,11 @@ module MiniMagick
     end
 
     def run_command(command, *args)
+      # path is always on the end of the args
+      path = args.pop
+
       args.collect! do |arg|        
+
         # args can contain characters like '>' so we must escape them, but don't quote switches
         if arg !~ /^[\+\-]/
           "\"#{arg}\""
@@ -150,7 +154,7 @@ module MiniMagick
         end
       end
 
-      command = "#{command} #{args.join(' ')}"
+      command = "#{command} #{args.join(' ')} \"#{path}\""
       output = `#{command} 2>&1`
 
       if $?.exitstatus != 0

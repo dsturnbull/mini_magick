@@ -28,7 +28,7 @@ end
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
-    gemspec.name = "mini_magick"
+    gemspec.name = "dsturnbull-mini_magick"
     gemspec.summary = "Manipulate images with minimal use of memory."
     gemspec.email = "probablycorey@gmail.com"
     gemspec.homepage = "http://github.com/probablycorey/mini_magick"
